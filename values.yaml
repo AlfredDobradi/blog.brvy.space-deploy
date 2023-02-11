@@ -52,13 +52,13 @@ ingress:
     - host: staging.brvy.space
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: staging-blog
-                port:
-                  name: http
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: staging-blog
+              port:
+                name: http
   tls:
   - hosts:
     - staging.brvy.space
