@@ -45,7 +45,7 @@ ingress:
   enabled: true
   className: "nginx"
   annotations:
-    cert-manager.io/cluster-issuer: "cluster-letsencrypt-staging"
+    cert-manager.io/cluster-issuer: "cluster-letsencrypt-prod"
     kubernetes.io/tls-acme: "true"
   hosts:
     - host: staging.brvy.space
