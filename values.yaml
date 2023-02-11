@@ -37,7 +37,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  name: staging-blog
+  name: blog
   type: ClusterIP
   port: 80
 
@@ -48,19 +48,19 @@ ingress:
     cert-manager.io/cluster-issuer: "cluster-letsencrypt-prod"
     kubernetes.io/tls-acme: "true"
   hosts:
-    - host: staging.brvy.space
+    - host: brvy.space
       paths:
         - path: /
           pathType: Prefix
           backend:
             service:
-              name: staging-blog
+              name: blog
               port:
                 name: http
   tls:
   - hosts:
-    - staging.brvy.space
-    secretName: no-idea
+    - brvy.space
+    secretName: blog-cert
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
